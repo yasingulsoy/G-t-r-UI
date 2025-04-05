@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt ve Giriş</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Blinker', sans-serif;
+            background: linear-gradient(to right, #000000, #434343);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            width: 400px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-in-out;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transition: background 0.3s;
+        }
+        input:focus {
+            background: rgba(255, 255, 255, 0.3);
+            outline: none;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #4a4a4a;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #333;
+        }
+        .google-btn {
+            background: #db4437;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .google-btn i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        .nav-links {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: white;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="index.html">Anasayfa</a>
+        <a href="sss.html">SSS</a>
+    </div>
+    <div class="container">
+        <h2>Kayıt Ol / Giriş Yap</h2>
+        <form id="login-form">
+            <input type="email" placeholder="E-posta" required>
+            <input type="password" placeholder="Şifre" required>
+            <button type="submit">Giriş Yap</button>
+        </form>
+        <p style="text-align: center;">veya</p>
+        <button class="google-btn" id="google-login">
+            <i class="fab fa-google"></i> Google ile Kayıt Ol
+        </button>
+        <p style="text-align: center; margin-top: 10px;">Hesabın yok mu? <a href="sign.html" style="color: #ccc;">Kayıt Ol</a></p>
+        <p style="text-align: center; margin-top: 10px;">Bayi misiniz? <a href="shoplogin.html" id="shop-login-link" style="color:white"

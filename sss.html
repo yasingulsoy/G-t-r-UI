@@ -1,0 +1,212 @@
+<html>
+ <head>
+  <title>
+   Sık Sorulan Sorular
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Blinker', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-bottom: 1px solid #444;
+        }
+        .header img {
+            width: 100px;
+            transition: transform 0.3s ease;
+        }
+        .header img:hover {
+            transform: scale(1.1);
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin-top: 5px;
+            right: 0;
+            background: #fff;
+            transition: width 0.3s ease;
+            -webkit-transition: width 0.3s ease;
+        }
+        .nav a:hover {
+            color: #f0f0f0;
+        }
+        .nav a:hover::after {
+            width: 100%;
+            left: 0;
+            background: #f0f0f0;
+        }
+        .content {
+            margin-top: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .content h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #444;
+            padding-bottom: 10px;
+        }
+        .content p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .content p strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: xenter;
+            font-size: 12px;
+            border-top: 1px solid #444;
+            padding-top: 10px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <div class="header">
+    <img alt="Götür logo" height="100" src="images/Götür Logo.png" width="100"/>
+    <div class="nav">
+     <a href="index.html">
+      Anasayfa
+     </a>
+     <a href="#">
+      Ürünler
+     </a>
+     <a href="#">
+      Bayi Girişi
+     </a>
+     <a href="sign.html">
+      Giriş Yap / Kayıt Ol
+     </a>
+     <a href="sss.html">
+      SSS
+     </a>
+     <a href="help.html">
+      Yardım
+     </a>
+    </div>
+   </div>
+   <div class="content">
+    <h1>
+     SIK SORULAN SORULAR
+    </h1>
+    <p>
+     <strong>
+      1. Götür nedir ve nasıl çalışır?
+     </strong>
+     Götür, kullanıcıların ihtiyaç duyduğu ürünlere kolayca ulaşmasını sağlayan modern bir e-ticaret platformudur. Geniş ürün yelpazesiyle, güvenli alışveriş yapma imkanı sunar. Ürünleri seçip sepete ekleyerek hızlı ve kolay bir şekilde satın alabilirsiniz.
+    </p>
+    <p>
+     <strong>
+      2. Nasıl üye olabilirim?
+     </strong>
+     Üyelik işlemleri oldukça basittir. Sağ üst köşede yer alan "Giriş Yap / Kayıt Ol" butonuna tıklayarak e-posta adresinizi ve gerekli bilgileri doldurmanız yeterlidir.
+    </p>
+    <p>
+     <strong>
+      3. Siparişimin durumunu nasıl takip edebilirim?
+     </strong>
+     Siparişlerinizin durumunu, hesabınıza giriş yaptıktan sonra "Siparişlerim" sekmesinden takip edebilirsiniz. Sipariş durumu, kargo bilgisi ve teslimat tarihini buradan görebilirsiniz.
+    </p>
+    <p>
+     <strong>
+      4. Ödeme yöntemleriniz nelerdir?
+     </strong>
+     Kredi kartı, banka kartı ve kapıda ödeme seçenekleriyle güvenli alışveriş yapabilirsiniz. Ayrıca, dönemsel olarak farklı ödeme yöntemleri de sunulmaktadır.
+    </p>
+    <p>
+     <strong>
+      5. Ürün iade ve değişim süreci nasıl işler?
+     </strong>
+     Siparişinizi teslim aldığınız tarihten itibaren 14 gün içinde iade veya değişim talebinde bulunabilirsiniz. Ürünlerin kullanılmamış ve orijinal ambalajında olması gerekmektedir. İade süreci, "Hesabım" &gt; "İade Taleplerim" kısmından başlatılabilir.
+    </p>
+    <p>
+     <strong>
+      6. Kargo ücreti ne kadar?
+     </strong>
+     150 TL ve üzeri siparişlerde kargo ücretsizdir. Altındaki siparişler için kargo ücreti sabit 19,99 TL olarak belirlenmiştir.
+    </p>
+    <p>
+     <strong>
+      7. Ürünleriniz orijinal mi?
+     </strong>
+     Evet, Götür platformunda satışa sunulan tüm ürünler %100 orijinaldir ve üretici firmaların güvencesi altındadır.
+    </p>
+    <p>
+     <strong>
+      8. Hangi bölgelere hizmet veriyorsunuz?
+     </strong>
+     Şu anda Türkiye'nin her yerine kargo hizmeti sağlıyoruz. İlerleyen dönemde uluslararası teslimat seçenekleri de sunmayı planlıyoruz.
+    </p>
+    <p>
+     <strong>
+      9. İndirimlerden ve kampanyalardan nasıl haberdar olabilirim?
+     </strong>
+     Bültenimize üye olarak ve sosyal medya hesaplarımızı takip ederek güncel kampanyalar ve indirimlerden haberdar olabilirsiniz.
+    </p>
+    <p>
+     <strong>
+      10. Yardım ve destek alabileceğim bir müşteri hizmetleriniz var mı?
+     </strong>
+     Evet, 7/24 hizmet veren müşteri destek ekibimizle iletişim kurabilirsiniz. "Yardım" sekmesinden canlı destek alabilir veya iletişim numaralarımızdan bize ulaşabilirsiniz.
+    </p>
+   </div>
+   <div class="footer">
+    © 2023 Götür. Tüm hakları saklıdır.
+   </div>
+  </div>
+ </body>
+</html>

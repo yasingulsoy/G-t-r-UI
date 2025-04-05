@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Götür</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Blinker', sans-serif;
+            background: linear-gradient(to right, #000000, #000000);
+            color: white;
+            overflow-x: hidden;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: transparent;
+            animation: slideDown 1s ease-in-out;
+        }
+        .navbar a {
+            color: #ccc;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: white;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            width: 50px;
+            height: auto;
+        }
+        .logo span {
+            font-size: 24px;
+            margin-left: 10px;
+        }
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 50px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .text-content {
+            max-width: 600px;
+        }
+        .text-content h1 {
+            font-size: 48px;
+            margin: 0;
+            animation: slideInLeft 1s ease-in-out;
+        }
+        .text-content .rating {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            animation: slideInLeft 1s ease-in-out;
+        }
+        .text-content .rating i {
+            color: #FFD700;
+            margin-right: 5px;
+        }
+        .text-content .rating span {
+            margin-left: 10px;
+            font-size: 18px;
+        }
+        .text-content .buttons {
+            display: flex;
+            gap: 20px;
+            animation: slideInLeft 1s ease-in-out;
+        }
+        .text-content .buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .text-content .buttons .buy {
+            background-color: white;
+            color: black;
+        }
+        .text-content .buttons .buy:hover {
+            background-color: #ccc;
+        }
+        .text-content .buttons .details {
+            background-color: #4a4a4a;
+            color: white;
+        }
+        .text-content .buttons .details:hover {
+            background-color: #333;
+        }
+        .image-content img {
+            width: 400px;
+            height: auto;
+            animation: slideInRight 1s ease-in-out;
+        }
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .image-content img {
+                width: 300px;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideInRight {
+            from {
+                transform: translateX(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .slide {
+            display: none;
+        }
+        .active-slide {
+            display: flex;
+        }
+        .cart {
+            position: fixed;
+            top: 0;
+            right: -300px; /* Başlangıçta görünmez */
+            width: 300px;
+            height: 100%;
+            background-color: #333;
+            color: white;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+            transition: right 0.3s ease;
+            z-index: 1000;
+        }
+        .cart-content {
+            padding: 20px;
+        }
+        .cart-items {
+            margin-top: 20px;
+        }
+        #close-cart {
+            background-color: #4a4a4a;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #close-cart:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img alt="Logo" height="50" src="images/götür logo.png" width="50"/>
+                <span>GÖTÜR</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Anasayfa</a>
+                <a href="products.html">Ürünler</a>
+                <a href="shoplogin.html">Bayi Girişi</a>
+                <a href="login.html">Giriş Yap / Kayıt Ol</a>
+                <a href="sss.html">SSS</a>
+                <a href="help.html">Yardım</a>
+                <a href="#" id="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="slide active-slide">
+                <div class="text-content">
+                    <h1>Beats Studio Kulak Üstü Beyaz Studio Kulaklık</h1>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>9.863</span>
+                    </div>
+                    <div class="buttons">
+                        <button class="buy">Satın Al</button>
+                        <button class="details">İncele</button>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img alt="Beats Studio Kulak Üstü Beyaz Studio Kulaklık" height="1000" src="images/2.png" width="600"/>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="text-content">
+                    <h1>Eyüp Sabri Tuncer Gülsuyu <br> 350 ML</h1>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>8.543</span>
+                    </div>
+                    <div class="buttons">
+                        <button class="buy">Satın Al</button>
+                        <button class="details">İncele</button>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img alt="Eyüp Sabri Tuncer Gülsuyu 350 ML" height="1000" src="images/1.png" width="600"/>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="text-content">
+                    <h1>ARALIK AYI İNDİRİMLERİ BAŞLIYOR !</h1>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>7.321</span>
+                    </div>
+                    <div class="buttons">
+                        <button class="buy">Satın Al</button>
+                        <button class="details">İncele</button>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img alt="Herhangii bir adam" height="1000" src="images/Götür Logo.png" width="600"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="anasayfa">
+        <!-- Anasayfa content -->
+    </div>
+    <div id="urunler">
+        <!-- Ürünler content -->
+    </div>
+    <div id="bayi-girisi">
+        <!-- Bayi Girişi content -->
+    </div>
+    <div id="giris-yap">
+        <!-- Giriş Yap / Kayıt Ol content -->
+    </div>
+    <div id="sss">
+        <!-- SSS content -->
+    </div>
+    <div id="yardim">
+        <!-- Yardım content -->
+    </div>
+    <div id="cart" class="cart">
+        <div class="cart-content">
+            <h2>Sepetim</h2>
+            <button id="close-cart">Kapat</button>
+            <div class="cart-items">
+                <!-- Sepet öğeleri buraya eklenecek -->
+                <p>Sepetinizde henüz ürün yok.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        // Slide gösterme fonksiyonu
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active-slide');
+                if (i === index) {
+                    slide.classList.add('active-slide');
+                }
+            });
+        }
+
+        // Bir sonraki slide'a geçiş
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Bir önceki slide'a geçiş
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Klavye ok tuşlarını dinleme
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowRight') {
+                nextSlide();
+            } else if (event.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+
+        // Otomatik geçiş
+        setInterval(nextSlide, 5000); // Her 5 saniyede bir slide değişimi
+
+        // Sepet ikonunu ve sepeti açma kapama işlevselliği
+        const cartIcon = document.getElementById('cart-icon');
+        const cart = document.getElementById('cart');
+        const closeCart = document.getElementById('close-cart');
+
+        // Sepet ikonuna tıklandığında sepeti aç
+        cartIcon.addEventListener('click', (event) => {
+            event.preventDefault(); // Linkin varsayılan davranışını engelle
+            cart.style.right = '0'; // Sepeti göster
+        });
+
+        // Sepeti kapat
+        closeCart.addEventListener('click', () => {
+            cart.style.right = '-300px'; // Sepeti gizle
+        });
+    </script>
+</body>
+</html>
